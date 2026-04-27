@@ -1,0 +1,65 @@
+/* Custom Theme for Sovereign Content Engine */
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Inter', -apple-system, BlinkSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.page-progress {
+    display: none;
+}
+
+.banner {
+    background: linear-gradient(135deg, #004a99 0%, #00a86b 100%) !important;
+    color: white !important;
+    padding: 4rem 2rem !important;
+    text-align: center;
+    border-bottom: 4px solid #00ffcc;
+}
+
+.banner h1 {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner p {
+    font-size: 1.5rem !important;
+    color: #e6edf3 !important;
+}
+
+.container {
+    max-width: 900px !important;
+    margin: 2rem auto !important;
+    background: #161b22;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #30363d;
+}
+
+h2 {
+    color: #58a6ff !important;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem !important;
+}
+
+a {
+    color: #58a6ff !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1f6feb !important;
+    text-decoration: underline;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #8b949e;
+}
