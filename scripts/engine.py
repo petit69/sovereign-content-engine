@@ -1,6 +1,7 @@
 import os
 import google.generativeai as genai
 from datetime import datetime
+import shutil
 
 def generate_guide():
     # Setup API Key from Environment
@@ -22,9 +23,14 @@ def generate_guide():
         "Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado"
     ]
 
+    # Ensure directories exist
+    os.makedirs("content", exist_ok=True)
+    os.makedirs("_posts", exist_ok=True)
+
     for topic in topics:
         date = datetime.now().strftime("%Y-%m-%d")
-        title = topic.replace(" ", "_").replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u").replace("ó", "o").replace("ñ", "n").replace(":", "").replace(",", "").lower()
+        # Clean title for filename
+        clean_title = topic.lower().replace(" ", "_").replace("ó", "o").replace("í", "i").replace("á", "a").replace("é", "e").replace("ú", "u").replace("ñ", "n").replace(":", "").replace(",", "")
 
         print(f"Generando guía sobre: {topic}...")
 
@@ -53,13 +59,12 @@ def generate_guide():
             response = model.generate_content(prompt)
             content = response.text
 
-            # Save to content folder
-            os.makedirs("content", exist_ok=True)
-            filename = f"{title}.md"
-            with open(f"content/{filename}", "w", encoding="utf-8") as f:
+            # Save directly to _posts to avoid move errors
+            filename = f"{date}-{clean_title}.md"
+            with open(f"_posts/{filename}", "w", encoding="utf-8") as f:
                 f.write(content)
 
-            print(f"Guía guardada exitosamente: {filename}")
+            print(f"Guía guardada exitosamente en _posts: {filename}")
         except Exception as e:
             print(f"Error generating guide for {topic}: {e}")
 

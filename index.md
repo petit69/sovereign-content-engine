@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Sovereign Content Engine
 description: Guías maestras para la optimización de hardware legado y soberanía tecnológica.
 ---
