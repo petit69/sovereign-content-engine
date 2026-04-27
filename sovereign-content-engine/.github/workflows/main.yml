@@ -1,0 +1,25 @@
+name: Content Engine Run
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Run Content Engine
+        run: |
+          python scripts/engine.py
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Sovereign Bot"
+          git config --global user.email "bot@sovereign.com"
+          git add .
+          git commit -m "Auto-generate content: $(date)" || echo "No changes to commit"
+          git push origin main
