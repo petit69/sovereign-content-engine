@@ -1,7 +1,6 @@
 import os
 import google.generativeai as genai
 from datetime import datetime
-import shutil
 
 def generate_guide():
     # Setup API Key from Environment
@@ -12,8 +11,16 @@ def generate_guide():
 
     genai.configure(api_key=api_key)
 
-    # Using the latest stable model to avoid 404 errors
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    # Change to a more generic and stable model name to avoid 404
+    # We try gemini-1.5-flash-latest or gemini-pro
+    model_name = 'gemini-1.5-flash'
+    try:
+        model = genai.GenerativeModel(model_name)
+        # Test call to verify model exists
+        model.generate_content("Test")
+    except Exception:
+        print(f"Trying fallback model...")
+        model = genai.GenerativeModel('gemini-pro')
 
     # Topics for guides
     topics = [
@@ -23,13 +30,10 @@ def generate_guide():
         "Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado"
     ]
 
-    # Ensure directories exist
-    os.makedirs("content", exist_ok=True)
     os.makedirs("_posts", exist_ok=True)
 
     for topic in topics:
         date = datetime.now().strftime("%Y-%m-%d")
-        # Clean title for filename
         clean_title = topic.lower().replace(" ", "_").replace("ó", "o").replace("í", "i").replace("á", "a").replace("é", "e").replace("ú", "u").replace("ñ", "n").replace(":", "").replace(",", "")
 
         print(f"Generando guía sobre: {topic}...")
@@ -59,7 +63,6 @@ def generate_guide():
             response = model.generate_content(prompt)
             content = response.text
 
-            # Save directly to _posts to avoid move errors
             filename = f"{date}-{clean_title}.md"
             with open(f"_posts/{filename}", "w", encoding="utf-8") as f:
                 f.write(content)
