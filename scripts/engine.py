@@ -1,6 +1,5 @@
 import os
-import requests
-import json
+import google.generativeai as genai
 from datetime import datetime
 
 def generate_topic():
@@ -19,33 +18,26 @@ def generate_content(topic):
     if not api_key:
         return "Error: GOOGLE_API_KEY not found in environment variables."
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
-
-    prompt = f"""
-    You are an expert in legacy hardware optimization and Linux.
-    Write a professional, detailed, and SEO-optimized technical guide in Spanish about: {topic}.
-
-    The guide must include:
-    1. A catchy title.
-    2. An introduction explaining why this is important for old hardware.
-    3. Step-by-step technical instructions.
-    4. A list of tools or software recommended.
-    5. A concluding 'Pro Tip' for maximum performance.
-
-    Use Markdown formatting. Be concise but thorough.
-    """
-
-    payload = {
-        "contents": [{
-            "parts": [{"text": prompt}]
-        }]
-    }
-
     try:
-        response = requests.post(url, json=payload, timeout=30)
-        response.raise_for_status()
-        result = response.json()
-        return result['candidates'][0]['content']['parts'][0]['text']
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel('gemini-1.5-flash')
+
+        prompt = f"""
+        You are an expert in legacy hardware optimization and Linux.
+        Write a professional, detailed, and SEO-optimized technical guide in Spanish about: {topic}.
+
+        The guide must include:
+        1. A catchy title.
+        2. An introduction explaining why this is important for old hardware.
+        3. Step-by-step technical instructions.
+        4. A list of tools or software recommended.
+        5. A concluding 'Pro Tip' for maximum performance.
+
+        Use Markdown formatting. Be concise but thorough.
+        """
+
+        response = model.generate_content(prompt)
+        return response.text
     except Exception as e:
         return f"Error generating content: {str(e)}"
 
