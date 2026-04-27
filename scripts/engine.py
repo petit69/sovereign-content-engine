@@ -2,59 +2,66 @@ import os
 import google.generativeai as genai
 from datetime import datetime
 
-def generate_topic():
-    topics = [
-        "Optimizing Linux Mint for Core 2 Duo CPUs",
-        "Best Lightweight Desktop Environments for 4GB RAM",
-        "Reviving Old Laptops with SSDs and Linux Mint",
-        "Gaming on Old Hardware: The Power of Wine and Proton",
-        "Undervolting Old CPUs to Reduce Heat and Noise"
-    ]
-    import random
-    return random.choice(topics)
-
-def generate_content(topic):
+def generate_guide():
+    # Setup API Key from Environment
     api_key = os.environ.get("GOOGLE_API_KEY")
     if not api_key:
-        return "Error: GOOGLE_API_KEY not found in environment variables."
+        print("Error: GOOGLE_API_KEY not found in environment variables.")
+        return
 
-    try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+    genai.configure(api_key=api_key)
+
+    # Using the latest stable model to avoid 404 errors
+    model = genai.GenerativeModel('gemini-1.5-flash')
+
+    # Topics for guides
+    topics = [
+        "Optimización de Linux Mint para CPUs antiguas",
+        "Uso de SSDs en laptops obsoletas para mejorar el rendimiento",
+        "Configuración de swap y zram para sistemas con poca RAM",
+        "Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado"
+    ]
+
+    for topic in topics:
+        date = datetime.now().strftime("%Y-%m-%d")
+        title = topic.replace(" ", "_").replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u").replace("ó", "o").replace("ñ", "n").replace(":", "").replace(",", "").lower()
+
+        print(f"Generando guía sobre: {topic}...")
 
         prompt = f"""
-        You are an expert in legacy hardware optimization and Linux.
-        Write a professional, detailed, and SEO-optimized technical guide in Spanish about: {topic}.
+        Act as an expert systems engineer specializing in legacy hardware.
+        Write a professional, high-performance technical guide in SPANISH.
+        Topic: {topic}
 
-        The guide must include:
-        1. A catchy title.
-        2. An introduction explaining why this is important for old hardware.
-        3. Step-by-step technical instructions.
-        4. A list of tools or software recommended.
-        5. A concluding 'Pro Tip' for maximum performance.
+        The guide must be:
+        1. Written entirely in SPANISH.
+        2. Technical, authoritative, and professional.
+        3. Focused on 'Soberanía Tecnológica' and high efficiency.
+        3. Structured with clear headings, a step-by-step guide, and a final conclusion.
 
-        Use Markdown formatting. Be concise but thorough.
+        Format the output as a Jekyll post with frontmatter:
+        ---
+        layout: post
+        title: '{topic}'
+        date: {date}
+        ---
+
+        (The content must be in Spanish)
         """
 
-        response = model.generate_content(prompt)
-        return response.text
-    except Exception as e:
-        return f"Error generating content: {str(e)}"
+        try:
+            response = model.generate_content(prompt)
+            content = response.text
 
-def main():
-    os.makedirs("content", exist_ok=True)
-    topic = generate_topic()
-    print(f"Generating content for topic: {topic}")
+            # Save to content folder
+            os.makedirs("content", exist_ok=True)
+            filename = f"{title}.md"
+            with open(f"content/{filename}", "w", encoding="utf-8") as f:
+                f.write(content)
 
-    content = generate_content(topic)
-
-    date = datetime.now().strftime("%Y-%m-%d")
-    file_name = f"content/{topic.replace(' ', '_').lower()}.md"
-
-    with open(file_name, "w", encoding="utf-8") as f:
-        f.write(f"# {topic}\n\n**Fecha:** {date}\n\n{content}")
-
-    print(f"Article saved to: {file_name}")
+            print(f"Guía guardada exitosamente: {filename}")
+        except Exception as e:
+            print(f"Error generating guide for {topic}: {e}")
 
 if __name__ == "__main__":
-    main()
+    generate_guide()
