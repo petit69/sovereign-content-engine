@@ -11,18 +11,17 @@ def generate_guide():
 
     genai.configure(api_key=api_key)
 
-    # Change to a more generic and stable model name to avoid 404
-    # We try gemini-1.5-flash-latest or gemini-pro
-    model_name = 'gemini-1.5-flash'
-    try:
-        model = genai.GenerativeModel(model_name)
-        # Test call to verify model exists
-        model.generate_content("Test")
-    except Exception:
-        print(f"Trying fallback model...")
-        model = genai.GenerativeModel('gemini-pro')
+    # Using the latest stable model to avoid 404 errors
+    model = genai.GenerativeModel('gemini-1.5-flash')
 
-    # Topics for guides
+    # Technical image library for the robot
+    image_library = {
+        "cpu": "https://images.unsplash.com/photo-1591799264318-7e6ef8B7f73c?auto=format&fit=crop&w=600&q=80",
+        "ram": "https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=600&q=80",
+        "ssd": "https://images.unsplash.com/photo-1597733336794-775d63963840?auto=format&fit=crop&w=600&q=80",
+        "general": "https://images.unsplash.com/photo-1550751827-4c39ad817773?auto=format&fit=crop&w=600&q=80"
+    }
+
     topics = [
         "Optimización de Linux Mint para CPUs antiguas",
         "Uso de SSDs en laptops obsoletas para mejorar el rendimiento",
@@ -38,6 +37,12 @@ def generate_guide():
 
         print(f"Generando guía sobre: {topic}...")
 
+        # Assign image based on keyword
+        img_url = image_library["general"]
+        if "cpu" in topic.lower(): img_url = image_library["cpu"]
+        elif "ssd" in topic.lower(): img_url = image_library["ssd"]
+        elif "ram" in topic.lower() or "swap" in topic.lower(): img_url = image_library["ram"]
+
         prompt = f"""
         Act as an expert systems engineer specializing in legacy hardware.
         Write a professional, high-performance technical guide in SPANISH.
@@ -46,14 +51,15 @@ def generate_guide():
         The guide must be:
         1. Written entirely in SPANISH.
         2. Technical, authoritative, and professional.
-        3. Focused on 'Soberanía Tecnológica' and high efficiency.
         3. Structured with clear headings, a step-by-step guide, and a final conclusion.
+        4. Focused on 'Soberanía Tecnológica' and high efficiency.
 
         Format the output as a Jekyll post with frontmatter:
         ---
-        layout: post
+        layout: default
         title: '{topic}'
         date: {date}
+        image: '{img_url}'
         ---
 
         (The content must be in Spanish)
