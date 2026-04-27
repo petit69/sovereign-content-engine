@@ -2,6 +2,7 @@
 layout: default
 title: Configuración de swap y zram para sistemas con poca RAM
 date: 2026-04-27
+image: https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=600&q=80
 ---
 
 # Configuración de swap y zram para sistemas con poca RAM

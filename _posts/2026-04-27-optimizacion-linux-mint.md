@@ -2,6 +2,7 @@
 layout: default
 title: Optimización de Linux Mint para CPUs antiguas
 date: 2026-04-27
+image: https://images.unsplash.com/photo-1591799264318-7e6ef8B7f73c?auto=format&fit=crop&w=600&q=80
 ---
 
 # Optimización de Linux Mint para CPUs antiguas

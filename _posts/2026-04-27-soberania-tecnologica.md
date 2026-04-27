@@ -2,6 +2,7 @@
 layout: default
 title: Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado
 date: 2026-04-27
+image: https://images.unsplash.com/photo-1550751827-4c39ad817773?auto=format&fit=crop&w=600&q=80
 ---
 
 # Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado
