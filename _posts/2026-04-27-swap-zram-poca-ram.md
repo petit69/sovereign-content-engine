@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Configuración de swap y zram para sistemas con poca RAM
 date: 2026-04-27
 ---

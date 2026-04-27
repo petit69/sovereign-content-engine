@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Uso de SSDs en laptops obsoletas para mejorar el rendimiento
 date: 2026-04-27
 ---

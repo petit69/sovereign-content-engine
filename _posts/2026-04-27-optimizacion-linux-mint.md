@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Optimización de Linux Mint para CPUs antiguas
 date: 2026-04-27
 ---

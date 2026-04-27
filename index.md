@@ -1,9 +1,8 @@
 ---
+layout: default
 title: Sovereign Content Engine
 description: Guías maestras para la optimización de hardware legado y soberanía tecnológica.
 ---
-
-<link rel="stylesheet" href="/assets/css/custom.css">
 
 <section class="hero">
   <h1>Sovereign<br><span class="text-gradient">Content Engine</span></h1>
@@ -23,8 +22,3 @@ description: Guías maestras para la optimización de hardware legado y soberan�
     {% endfor %}
   </div>
 </div>
-
-<footer class="footer">
-  <p>© 2026 Sovereign Content Engine | Especialistas en Soberanía Tecnológica</p>
-  <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.7rem;">Sistemas de Optimización de Bajo Nivel & Software Libre</p>
-</footer>

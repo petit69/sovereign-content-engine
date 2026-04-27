@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado
 date: 2026-04-27
 ---
