@@ -1,0 +1,51 @@
+name: Sovereign Content Engine - Automatic Generation
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Every Monday at 9:00 AM UTC
+  workflow_dispatch: # Allows manual trigger from the Actions tab
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install google-generativeai
+
+      - name: Run Content Engine
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          python3 scripts/engine.py
+
+      - name: Format and Move content to _posts
+        run: |
+          mkdir -p _posts
+          # Move files from content/ to _posts/ with proper Jekyll date prefix
+          DATE=$(date +'%Y-%m-%d')
+          for file in content/*.md; do
+            filename=$(basename "$file")
+            # Replace spaces with hyphens for Jekyll compatibility
+            clean_name=$(echo "$filename" | sed 's/ /-/g')
+            mv "$file" "_posts/${DATE}-${clean_name}"
+          done
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Sovereign Engine Bot"
+          git config --global user.email "bot@sovereign-content.engine"
+          git add .
+          git commit -m "🤖 Automatic Content Generation: ${DATE}" || echo "No changes to commit"
+          git push
