@@ -12,7 +12,7 @@ def generate_guide():
     genai.configure(api_key=api_key)
 
     # Using the latest stable model to avoid 404 errors
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemma-4-31b-it')
 
     # Technical image library for the robot
     image_library = {
@@ -44,15 +44,19 @@ def generate_guide():
         elif "ram" in topic.lower() or "swap" in topic.lower(): img_url = image_library["ram"]
 
         prompt = f"""
-        Act as an expert systems engineer specializing in legacy hardware.
-        Write a professional, high-performance technical guide in SPANISH.
+        Act as the lead engineer of the Digital Resistance. Write a technical guide in SPANISH that empowers the user against planned obsolescence.
         Topic: {topic}
 
-        The guide must be:
-        1. Written entirely in SPANISH.
-        2. Technical, authoritative, and professional.
-        3. Structured with clear headings, a step-by-step guide, and a final conclusion.
-        4. Focused on 'Soberanía Tecnológica' and high efficiency.
+        REQUIREMENTS:
+        1. LANGUAGE: 100% SPANISH.
+        2. TONE: Professional but subversive, inspiring technological sovereignty.
+        3. STRUCTURE:
+           - # [Title]
+           - ## ✊ El Problema: la Obsolescencia Programada (Explain why this topic matters for sovereignty).
+           - ## 🛠️ La Solución Técnica: (Deep-dive into hardware/software technicals).
+           - ## 🚀 Protocolo de Liberación (Detailed, numbered steps with code blocks).
+           - ## ⚖️ Impacto en la Soberanía Tecnológica (Philosophical and practical conclusion).
+        4. FORMATTING: Use bold text for key terms and tables for comparisons where applicable.
 
         Format the output as a Jekyll post with frontmatter:
         ---
@@ -61,8 +65,6 @@ def generate_guide():
         date: {date}
         image: '{img_url}'
         ---
-
-        (The content must be in Spanish)
         """
 
         try:

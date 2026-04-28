@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Rendimiento de Imágenes - Sovereign Engine</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0a0a0a; color: #eee; padding: 2rem; }
+        .test-section { margin-bottom: 4rem; border: 1px solid #333; padding: 1rem; border-radius: 8px; }
+        h2 { color: #00ffcc; border-bottom: 1px solid #333; padding-bottom: 0.5rem; }
+        .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1rem; }
+        .image-container { position: relative; background: #1a1a1a; border-radius: 8px; overflow: hidden; height: 200px; }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.5s ease; }
+        .label { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.7); color: #00ffcc; padding: 4px 8px; font-size: 12px; border-radius: 4px; }
+        .metrics { margin-top: 1rem; font-family: monospace; color: #aaa; }
+    </style>
+</head>
+<body>
+    <h1>🚀 Simulación de Optimización de Imágenes</h1>
+    <p>Comparativa de carga: Estándar vs Optimización de URL vs Lazy-Loading.</p>
+
+    <div class="test-section">
+        <h2>1. Carga Estándar (Sin optimizar)</h2>
+        <div class="image-grid">
+            <div class="image-container"><span class="label">Standard</span><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=1600&q=80"></div>
+            <div class="image-container"><span class="label">Standard</span><img src="https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=1600&q=80"></div>
+            <div class="image-container"><span class="label">Standard</span><img src="https://images.unsplash.com/photo-1591799264318-7e6ef8B7f928?auto=format&fit=crop&w=1600&q=80"></div>
+        </div>
+        <div class="metrics">Carga: Full Resolution (1600px) | Request: Directo</div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Optimización de URL (Dimensiones & Calidad)</h2>
+        <div class="image-grid">
+            <div class="image-container"><span class="label">Optimized</span><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=600&q=60"></div>
+            <div class="image-container"><span class="label">Optimized</span><img src="https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=600&q=60"></div>
+            <div class="image-container"><span class="label">Optimized</span><img src="https://images.unsplash.com/photo-1591799264318-7e6ef8B7f928?auto=format&fit=crop&w=600&q=60"></div>
+        </div>
+        <div class="metrics">Carga: Optimized (600px, q=60) | Ahorro estimado: ~70% de peso</div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Lazy-Loading + Optimized</h2>
+        <div class="image-grid">
+            <div class="image-container"><span class="label">Lazy</span><img loading="lazy" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=600&q=60"></div>
+            <div class="image-container"><span class="label">Lazy</span><img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=600&q=60"></div>
+            <div class="image-container"><span class="label">Lazy</span><img loading="lazy" src="https://images.unsplash.com/photo-1591799264318-7e6ef8B7f928?auto=format&fit=crop&w=600&q=60"></div>
+        </div>
+        <div class="metrics">Carga: Deferred (Lazy) | Prioridad: Solo cuando entra en el viewport</div>
+    </div>
+</body>
+</html>

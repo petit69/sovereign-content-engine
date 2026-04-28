@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Navegación - Sovereign Engine</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #eee; margin: 0; display: flex; }
+        .sidebar { width: 250px; background: #111; height: 100vh; border-right: 1px solid #333; padding: 2rem 1rem; position: fixed; }
+        .main-content { margin-left: 270px; padding: 2rem; width: 100%; }
+        .nav-item { padding: 10px; color: #aaa; text-decoration: none; display: block; border-radius: 4px; transition: 0.3s; }
+        .nav-item:hover, .nav-item.active { background: #222; color: #00ffcc; }
+        .breadcrumb { font-size: 14px; color: #666; margin-bottom: 1rem; }
+        .breadcrumb span { color: #00ffcc; cursor: pointer; }
+        .card { background: #1a1a1a; border: 1px solid #333; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+        h1 { color: #00ffcc; }
+        .badge { background: #00ffcc; color: #000; padding: 2px 6px; font-size: 10px; font-weight: bold; border-radius: 3px; text-transform: uppercase; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3 style="color: #00ffcc; margin-bottom: 2rem;">⚙️ Sovereign Engine</h3>
+        <a href="#" class="nav-item active">🏠 Inicio</a>
+        <div style="margin-top: 2rem; font-size: 12px; color: #555; text-transform: uppercase;">Categorías</div>
+        <a href="#" class="nav-item">🖥️ Optimización Linux</a>
+        <a href="#" class="nav-item">💾 Almacenamiento SSD</a>
+        <a href="#" class="nav-item">🛡️ Soberanía Digital</a>
+        <a href="#" class="nav-item">🔌 Hardware Legacy</a>
+    </div>
+
+    <div class="main-content">
+        <div class="breadcrumb">Sovereign Engine <span>/</span> Optimización Linux <span>/</span> ZRAM & Swap</div>
+        <h1>Optimización de Memoria Swap y ZRAM</h1>
+        <div class="card">
+            <p>Esta es una simulación de la <strong>Jerarquía Estructurada</strong>. El usuario puede navegar por categorías y sabe exactamente dónde se encuentra gracias a los breadcrumbs.</p>
+            <div class="badge">Soberanía Técnica</div>
+        </div>
+        <div class="card">
+            <h3>Análisis del Kernel</h3>
+            <p>Contenido técnico simulado sobre la gestión de memoria en kernels modernos para CPUs antiguas...</p>
+        </div>
+    </div>
+</body>
+</html>
