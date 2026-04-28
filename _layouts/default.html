@@ -166,6 +166,9 @@
             object-fit: cover;
             display: block;
             background-color: #1a1a1a;
+            background-image: url('{{ page.image | default: "https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=600&q=60" }}');
+            background-size: cover;
+            background-position: center;
         }
 
         .card-body {
