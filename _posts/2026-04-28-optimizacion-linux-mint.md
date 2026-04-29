@@ -50,7 +50,7 @@ Jekyll post with specific frontmatter.
 layout: default
 title: 'Optimización de Linux Mint para CPUs antiguas'
 date: 2026-04-28
-image: 'https://images.unsplash.com/photo-1591799264318-7e6ef8B7f73c?auto=format&fit=crop&w=600&q=80'
+image: '/assets/img/mint.jpg
 ---
 
 # Manual de Resistencia: Optimización de Linux Mint para CPUs Antiguas

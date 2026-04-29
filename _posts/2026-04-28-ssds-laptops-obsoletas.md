@@ -43,7 +43,7 @@ Professional but subversive, inspiring technological sovereignty.
 layout: default
 title: 'Uso de SSDs en laptops obsoletas para mejorar el rendimiento'
 date: 2026-04-28
-image: 'https://images.unsplash.com/photo-1597733336794-775d63963840?auto=format&fit=crop&w=600&q=80'
+image: '/assets/img/ssd.jpg
 ---
 
 # Resurrección de Hardware: El Salto al SSD contra la Obsolescencia
