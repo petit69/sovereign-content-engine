@@ -16,10 +16,10 @@ def generate_guide():
 
     # Technical image library for the robot
     image_library = {
-        "cpu": "https://images.unsplash.com/photo-1591799264318-7e6ef8B7f73c?auto=format&fit=crop&w=600&q=80",
-        "ram": "https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=600&q=80",
-        "ssd": "https://images.unsplash.com/photo-1597733336794-775d63963840?auto=format&fit=crop&w=600&q=80",
-        "general": "https://images.unsplash.com/photo-1550751827-4c39ad817773?auto=format&fit=crop&w=600&q=80"
+        "cpu": "/assets/img/default.jpg",
+        "ram": "/assets/img/default.jpg",
+        "ssd": "/assets/img/default.jpg",
+        "general": "/assets/img/default.jpg"
     }
 
     topics = [

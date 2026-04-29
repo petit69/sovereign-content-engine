@@ -15,7 +15,7 @@ description: Guías maestras para la optimización de hardware legado y soberan�
   <div class="guides-grid">
     {% for post in site.posts %}
       <a href="{{ post.url | relative_url }}" class="guide-card">
-        <img src="{{ post.image | default: 'https://images.unsplash.com/photo-1550751827-4c39ad817773?auto=format&fit=crop&w=600&q=80' }}" class="card-image" alt="{{ post.title }}">
+        <img src="{{ post.image | default: '/assets/img/default.jpg' }}" class="card-image" alt="{{ post.title }}">
         <div class="card-body">
           <h3>{{ post.title }}</h3>
           <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>

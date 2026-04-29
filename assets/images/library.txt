@@ -2,16 +2,16 @@
 # Use these as 'image' in Jekyll frontmatter
 
 ## Hardware / Infrastructure
-- Servers/Data Center: https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=1600&q=80
-- Industrial Motherboard: https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=1600&q=80
-- Microchip/CPU: https://images.unsplash.com/photo-1591799264318-7e6ef8B7f928?auto=format&fit=crop&w=1600&q=80
-- Networking/Cables: https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1600&q=80
+- Servers/Data Center: /assets/img/default.jpg
+- Industrial Motherboard: /assets/img/default.jpg
+- Microchip/CPU: /assets/img/default.jpg
+- Networking/Cables: /assets/img/default.jpg
 
 ## Cyber-Technical / Neon
-- Dark Tech Background: https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80
-- Code/Matrix Style: https://images.unsplash.com/photo-1550751827-4c39ad8d871b?auto=format&fit=crop&w=1600&q=80
-- Blue Tech Circuits: https://images.unsplash.com/photo-1518770660439-4636efebcaef?auto=format&fit=crop&w=1600&q=80
+- Dark Tech Background: /assets/img/default.jpg
+- Code/Matrix Style: /assets/img/default.jpg
+- Blue Tech Circuits: /assets/img/default.jpg
 
 ## Soberanía Tecnológica
-- Old Hardware/Repair: https://images.unsplash.com/photo-1597733336794-12d05021a43a?auto=format&fit=crop&w=1600&q=80
-- DIY Electronics: https://images.unsplash.com/photo-1553406830-ef75fbc2286c?auto=format&fit=crop&w=1600&q=80
+- Old Hardware/Repair: /assets/img/default.jpg
+- DIY Electronics: /assets/img/default.jpg
