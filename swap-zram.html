@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Content Engine | Optimización de Memoria</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #121212;
+            --accent-color: #00ffcc;
+            --text-main: #f5f5f5;
+            --text-dim: #a0a0a0;
+            --border-color: #222;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        nav {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-top: 3rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-top: 2rem;
+        }
+        p {
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        code {
+            background: #000;
+            color: #00ffcc;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #000;
+            color: #00ffcc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            text-align: left;
+        }
+        th {
+            background: var(--card-bg);
+            color: var(--accent-color);
+        }
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">← Volver al Inicio</a>
+        <div style="font-weight: 800; letter-spacing: 0.1em;">SOVEREIGN ENGINE</div>
+    </nav>
+    <div class="container">
+        <h1>Rompiendo las Cadenas del Hardware: Optimización de Memoria con Swap y zRAM</h1>
+        <p><em>Manual de optimización avanzada para sistemas con recursos limitados.</em></p>
+
+        <h2>✊ El Problema: la Obsolescencia Programada</h2>
+        <p>La industria del hardware opera bajo una premisa cínica: <strong>el estrangulamiento artificial</strong>. Nos venden la idea de que un equipo con 4GB u 8GB de RAM es "insuficiente" para el software moderno, no porque las tareas básicas lo requieran, sino porque el software se diseña deliberadamente para ser ineficiente (<strong>bloatware</strong>), obligándote a comprar un nuevo dispositivo.</p>
+        <p>Cuando tu sistema se queda sin memoria, el núcleo del sistema operativo (kernel) comienza a cerrar procesos violentamente (<strong>OOM Killer</strong>), provocando crashes y frustración. Este es el mecanismo de control: hacer que tu herramienta se sienta obsoleta para que cedas ante el consumo.</p>
+
+        <h2>🛠️ La Solución Técnica</h2>
+        <p>Para luchar contra la escasez de memoria, debemos implementar una estrategia de capas. No se trata solo de añadir espacio, sino de gestionar la <strong>densidad de datos</strong>.</p>
+
+        <h3>1. Swap (Intercambio)</h3>
+        <p>El <strong>Swap</strong> es un espacio en el disco duro que el sistema utiliza como si fuera RAM cuando esta se llena. Es lento, pero es la red de seguridad que evita que el sistema colapse.</p>
+
+        <h3>2. zRAM (Memoria Comprimida)</h3>
+        <p><strong>zRAM</strong> crea un dispositivo de bloque comprimido en la propia RAM. En lugar de mover datos inmediatamente al disco lento (Swap), el kernel los <strong>comprime</strong> y los mantiene en la RAM. Esto permite que 4GB de RAM física se comporten como si fueran 6GB o más.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Recurso</th>
+                    <th>Velocidad</th>
+                    <th>Latencia</th>
+                    <th>Propósito</th>
+                    <th>Impacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>RAM Física</td>
+                    <td>Ultra Rápida</td>
+                    <td>Mínima</td>
+                    <td>Ejecución inmediata</td>
+                    <td>Recurso finito</td>
+                </tr>
+                <tr>
+                    <td>zRAM</td>
+                    <td>Rápida</td>
+                    <td>Baja</td>
+                    <td>Compresión en tiempo real</td>
+                    <td>Multiplicador</td>
+                </tr>
+                <tr>
+                    <td>Swap (SSD/HDD)</td>
+                    <td>Lenta</td>
+                    <td>Alta</td>
+                    <td>Emergencia</td>
+                    <td>Seguro</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🚀 Protocolo de Liberación</h2>
+        <div class="highlight-box">
+            <h3>Paso 1: Auditoría de Memoria</h3>
+            <pre><code>free -h</code></pre>
+
+            <h3>Paso 2: Implementación de zRAM</h3>
+            <pre><code>sudo apt update && sudo apt install zram-config -y</code></pre>
+
+            <h3>Paso 3: Configuración de Swap de Emergencia</h3>
+            <pre><code>sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab</code></pre>
+
+            <h3>Paso 4: Ajuste de Swappiness</h3>
+            <pre><code>sudo sysctl vm.swappiness=10
+echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf</code></pre>
+        </div>
+
+        <h2>⚖️ Impacto en la Soberanía Tecnológica</h2>
+        <p>Al implementar este protocolo, has dejado de ser un consumidor pasivo para convertirte en un administrador de tu propia infraestructura. Tu equipo dejará de congelarse, podrás ejecutar más aplicaciones simultáneamente y prolongarás la vida útil de tu hardware por años.</p>
+        <p><strong>La verdadera potencia de una máquina no reside en la cantidad de gigabytes que el fabricante te permitió comprar, sino en la capacidad del usuario para optimizar y dominar la herramienta.</strong></p>
+    </div>
+    <div class="footer">
+        <p>© 2026 Sovereign Content Engine | Digital Resistance</p>
+    </div>
+</body>
+</html>
