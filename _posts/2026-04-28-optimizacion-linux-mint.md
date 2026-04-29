@@ -1,54 +1,6 @@
-
-Lead Engineer of the Digital Resistance.
-Optimizing Linux Mint for old CPUs to fight planned obsolescence.
-Spanish.
-Professional yet subversive, inspiring technological sovereignty.
-Jekyll post with specific frontmatter.
-
-        *   # Title
-        *   ## ✊ El Problema: la Obsolescencia Programada
-        *   ## 🛠️ La Solución Técnica
-        *   ## 🚀 Protocolo de Liberación (Steps + code)
-        *   ## ⚖️ Impacto en la Soberanía Tecnológica
-        *   Bold key terms, tables for comparisons.
-
-    *   *Frontmatter:* Standard YAML.
-    *   *Title:* Manual de Resistencia: Optimización de Linux Mint para CPUs Antiguas.
-    *   *Problem Section:* Focus on the "corporate cycle," e-waste, and the lie that "you need a new PC."
-    *   *Technical Solution Section:* Explain why Linux Mint (XFCE/MATE) is better, the role of the kernel, swap, and resource management.
-    *   *Protocol (The "How-to"):*
-        1.  Choosing the right edition (XFCE).
-        2.  Updating the system.
-        3.  Zram/Zswap (crucial for old RAM).
-        4.  Disabling unnecessary services.
-        5.  Browser optimization (uBlock, lightweight alternatives).
-    *   *Sovereignty Section:* Owning the hardware, breaking the dependency on big tech, environmental impact.
-
-    *   *Lead Engineer Voice:* Use words like "protocolo," "liberación," "soberanía," "infraestructura," "cadena de suministro corporativa."
-    *   *Tone:* "No compres, repara," "Toma el control," "El hardware no muere, lo matan."
-
-    *   *Frontmatter:* Done.
-    *   *Title:* # Manual de Resistencia: Optimización de Linux Mint para CPUs Antiguas.
-    *   *Section 1:* Discuss *obsolescencia programada*. Contrast corporate greed with technical potential.
-    *   *Section 2:* Discuss Linux Mint XFCE. Compare Desktop Environments (DE).
-        *   *Table:* Cinnamon vs. MATE vs. XFCE.
-    *   *Section 3:* The "Protocolo de Liberación".
-        *   Step 1: Install XFCE.
-        *   Step 2: `zram-config` (Critical for low RAM).
-        *   Step 3: `swappiness` adjustment.
-        *   Step 4: Reducing startup apps.
-        *   Step 5: Browser choice (LibreWolf/Pale Moon or Brave with optimizations).
-    *   *Section 4:* Sovereignty. The act of reusing hardware as a political statement.
-
-    *   Spanish? Yes.
-    *   Tone? Subversive/Professional.
-    *   Structure? Followed exactly.
-    *   Formatting? Bold terms, tables used.
-    *   Jekyll frontmatter? Included.
-```markdown
 ---
 layout: default
-title: 'Optimización de Linux Mint para CPUs antiguas'
+title: 'Manual de Resistencia: Optimización de Linux Mint para CPUs Antiguas'
 date: 2026-04-28
 image: '/assets/img/mint.jpg'
 ---
@@ -132,4 +84,3 @@ Cada CPU rescatada es un golpe al modelo de negocio extractivista. Cuando dejamo
 **Firmado:**
 *Lead Engineer, Digital Resistance*
 *“Libre el código, libre la máquina, libre la mente.”*
-```

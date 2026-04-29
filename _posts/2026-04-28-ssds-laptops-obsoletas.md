@@ -1,47 +1,6 @@
-
-Lead Engineer of the Digital Resistance.
-Using SSDs in obsolete laptops to improve performance.
-Spanish.
-Professional but subversive, inspiring technological sovereignty.
-
-        *   Jekyll Frontmatter.
-        *   `# [Title]`
-        *   `## ✊ El Problema: la Obsolescencia Programada`
-        *   `## 🛠️ La Solución Técnica`
-        *   `## 🚀 Protocolo de Liberación`
-        *   `## ⚖️ Impacto en la Soberanía Tecnológica`
-        *   Use bold text, tables, and code blocks.
-
-    *   *Tone Check:* Use words like "emancipación," "soberanía," "estándar," "obsolescencia," "resistencia." Avoid being too academic; make it feel like a manual for a rebel technician.
-    *   *Technical Depth:* Contrast HDD (Mechanical) vs. SSD (NAND Flash). Explain SATA protocols. Mention TRIM. Suggest lightweight OS (Linux) to complete the "liberation."
-
-    *   *Frontmatter:* Standard Jekyll format.
-    *   *Title:* Something bold. "Resurrección de Hardware: El Salto al SSD".
-
-    *   *The Problem (El Problema):* Focus on the corporate strategy of slowing down devices to force upgrades. Call it "digital waste" (basura electrónica).
-
-    *   *Technical Solution (La Solución Técnica):*
-        *   Explain the bottleneck: The HDD is the slowest part.
-        *   Compare HDD vs SSD in a table.
-        *   Mention Form Factors (2.5" SATA).
-
-    *   *Liberation Protocol (Protocolo de Liberación):*
-        *   Step 1: Identification (SATA 2/3).
-        *   Step 2: Hardware Swap (Physical installation).
-        *   Step 3: OS Installation (Preferably Linux for sovereignty).
-        *   Step 4: Optimization (TRIM, Alignment).
-        *   *Code blocks:* Use shell commands for `fstrim` or checking disk health.
-
-    *   *Impact (Impacto en la Soberanía Tecnológica):* Closing statement on why owning your hardware matters. Reducing dependence on Big Tech.
-
-    *   *Check:* Did I use bold text? Yes.
-    *   *Check:* Is it 100% Spanish? Yes.
-    *   *Check:* Is the structure correct? Yes.
-    *   *Check:* Is the tone "subversive lead engineer"? Yes.
-```markdown
 ---
 layout: default
-title: 'Uso de SSDs en laptops obsoletas para mejorar el rendimiento'
+title: 'Resurrección de Hardware: El Salto al SSD contra la Obsolescencia'
 date: 2026-04-28
 image: '/assets/img/ssd.jpg'
 ---
@@ -119,4 +78,3 @@ Al ejecutar este protocolo, has transformado un "desecho electrónico" en una he
 Haber reemplazado un HDD por un SSD y haber migrado a un software libre significa que ahora tienes el control total sobre tu flujo de datos y la vida útil de tu herramienta. Una laptop "obsoleta" con un SSD y Linux puede durar otros 5 o 10 años, desafiando la narrativa corporativa de que el hardware tiene una fecha de caducidad.
 
 **Mantengan sus máquinas encendidas. Mantengan su mente crítica. La resistencia es técnica.**
-```

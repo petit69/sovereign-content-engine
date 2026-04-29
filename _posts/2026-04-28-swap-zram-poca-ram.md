@@ -1,58 +1,8 @@
-
-Lead Engineer of the Digital Resistance.
-Configuring swap and zram for systems with low RAM.
-Professional but subversive, inspiring technological sovereignty.
-Spanish.
-Jekyll post with specific frontmatter.
-
-        *   `# [Title]`
-        *   `## ✊ El Problema: la Obsolescencia Programada`
-        *   `## 🛠️ La Solución Técnica`
-        *   `## 🚀 Protocolo de Liberación` (Detailed steps + code blocks)
-        *   `## ⚖️ Impacto en la Soberanía Tecnológica`
-Bold key terms, tables for comparisons.
-
-    *   *Tone check:* Use words like "estrangulamiento," "cadenas," "soberanía," "resistencia," "optimización," "rebelión." The goal is to make the user feel that fixing their old laptop is an act of rebellion against corporate greed.
-    *   *Technical Content:*
-        *   *Swap:* Disk space used as virtual RAM. Slow, but prevents crashes.
-        *   *zRAM:* Compressed RAM. Fast, efficient, avoids disk I/O.
-        *   *Comparison:* RAM vs. zRAM vs. Swap (Disk).
-    *   *Steps:*
-        1.  Check current status.
-        2.  Install zram-tools or similar.
-        3.  Configure zram.
-        4.  Create/Configure swap file.
-        5.  Adjust swappiness.
-
-    *   *Frontmatter:* (As requested).
-    *   *Title:* something impactful like "Rompiendo las Cadenas del Hardware: Guía de Swap y zRAM".
-
-    *   *Section 1: El Problema.* Focus on how software bloat forces hardware upgrades. This is "artificial obsolescence."
-
-    *   *Section 2: La Solución Técnica.* Explain the memory hierarchy.
-        *   RAM $\rightarrow$ zRAM (compressed) $\rightarrow$ Swap (Disk).
-        *   *Table:* RAM vs zRAM vs Swap.
-
-    *   *Section 3: Protocolo de Liberación.*
-        *   Step 1: Audit (`free -h`).
-        *   Step 2: zRAM installation (`sudo apt install zram-config` or `zram-tools`).
-        *   Step 3: Tuning zram.
-        *   Step 4: Swap file creation (fallback).
-        *   Step 5: Swappiness (`sysctl vm.swappiness=10`).
-
-    *   *Section 4: Impacto.* Focus on the circular economy and the idea that "old hardware is still capable."
-
-    *   100% Spanish? Yes.
-    *   Professional/Subversive tone? Yes.
-    *   Required structure? Yes.
-    *   Bold terms/Tables? Yes.
-    *   Jekyll format? Yes.
-```markdown
 ---
 layout: default
-title: 'Configuración de swap y zram para sistemas con poca RAM'
+title: 'Rompiendo las Cadenas del Hardware: Optimización de Memoria con Swap y zRAM'
 date: 2026-04-28
-image: '/assets/img/soberania.jpg'
+image: '/assets/img/swap.jpg'
 ---
 
 # Rompiendo las Cadenas del Hardware: Optimización de Memoria con Swap y zRAM
@@ -144,4 +94,3 @@ Al implementar este protocolo, has dejado de ser un consumidor pasivo para conve
 
 **Mantente optimizado. Mantente libre.**
 *— Lead Engineer, Digital Resistance.*
-```

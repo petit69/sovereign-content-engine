@@ -1,35 +1,3 @@
-
-Lead Engineer of the Digital Resistance.
-Technological Sovereignty: How to avoid programmed hardware lockout (Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado).
-Spanish.
-Professional yet subversive, empowering.
-
-        *   Frontmatter (Jekyll format).
-        *   # Title.
-        *   ## El Problema (The Problem).
-        *   ## La Solución Técnica (Technical Solution).
-        *   ## Protocolo de Liberación (Liberation Protocol with steps/code).
-        *   ## Impacto en la Soberanía Tecnológica (Impact/Conclusion).
-Bold key terms, tables for comparisons.
-
-    *   *Frontmatter:* Standard Jekyll setup.
-    *   *Title:* Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado.
-    *   *Section 1 (The Problem):* Focus on the "right to repair" (derecho a reparar), planned obsolescence, and the corporate grip on proprietary firmware/blobs. Explain that if you don't own the firmware, you don't own the hardware.
-    *   *Section 2 (Technical Solution):* Discuss **Open Source Firmware**, **Bootloaders**, **Hardware abstraction layers**, and **Reverse Engineering**. Explain the difference between a locked system (Proprietary) and an open system (Sovereign).
-    *   *Section 3 (Liberation Protocol):* This needs to be actionable but general enough to be a "guide." I'll focus on a typical scenario: flashing a custom ROM or replacing a proprietary BIOS/UEFI with Coreboot.
-        *   Step 1: Auditing (Checking the hardware).
-        *   Step 2: Backup (Dumping the SPI flash).
-        *   Step 3: Flashing (Using an external programmer like CH341A).
-        *   Step 4: Validation.
-        *   *Code blocks:* Examples of `flashrom` commands.
-    *   *Section 4 (Impact):* Connect technical freedom to political and personal autonomy. The hardware as a tool, not a lease.
-
-    *   *Language:* Ensure it's 100% Spanish.
-    *   *Tone:* Use words like "cadenas digitales," "resistencia," "soberanía," "hegemonía corporativa."
-    *   *Formatting:* Insert a table comparing "Proprietary Ecosystem" vs. "Sovereign Ecosystem."
-
-    *   *Correction:* Make sure not to suggest illegal activities but rather emphasize "Right to Repair" and ownership.
-    *   *Detail:* Ensure the code blocks for `flashrom` are accurate as it's a real-world tool for hardware liberation.
 ---
 layout: default
 title: 'Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado'
@@ -74,7 +42,7 @@ El objetivo es transformar un dispositivo "cerrado" en una herramienta agnóstic
 Este es el procedimiento estándar para recuperar el control de un dispositivo bloqueado. **Advertencia:** Este proceso conlleva riesgos; un error en el flasheo puede dejar el hardware inoperable (brick). Sin embargo, la libertad requiere riesgos.
 
 ### Paso 1: Auditoría de Hardware y Dumping
-Antes de cualquier modificación, debemos extraer el estado actual del firmware. Utilizaremos un programador externo (como el **CH341A**) para evitar que el software propietario bloquee la escritura.
+Antes de cualquier modificación, debemos extraer el estado actual del firmware. Utilizaremos un programador externo (como el **CH341A**) para evitar que el software propietario bloqueye la escritura.
 
 ### Paso 2: Extracción del Firmware Actual
 Conectamos el programador al chip SPI Flash de la placa base y ejecutamos el volcado de memoria:
