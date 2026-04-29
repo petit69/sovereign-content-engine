@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Content Engine | Ingeniería de Optimización</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #121212;
+            --accent-color: #00ffcc;
+            --accent-secondary: #004a99;
+            --text-main: #f5f5f5;
+            --text-dim: #a0a0a0;
+            --border-color: #222;
+            --glow: 0 0 15px rgba(0, 255, 204, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            background-image: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), url('/sovereign-content-engine/assets/img/soberania.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10 unwrapped, 7rem);
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+            margin: 0;
+            text-transform: uppercase;
+            color: var(--text-main);
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--text-dim);
+            margin-top: 2rem;
+            max-width: 600px;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            z-index: 1;
+        }
+
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2.section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-main);
+        }
+
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 1rem auto 0;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .guide-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-10px);
+            box-shadow: var(--glow);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background-color: #1a1a1a;
+        }
+
+        .card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .guide-card h3 {
+            color: var(--text-main);
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .guide-card p {
+            color: var(--text-dim);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .guide-card .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .guide-card .read-more::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .guide-card:hover .read-more::after {
+            transform: translateX(5px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 6rem;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            letter-spacing: 0.05em;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, var(--text-main), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1 class="text-gradient">SOVEREIGN<br>CONTENT ENGINE</h1>
+        <p>Ingeniería de Optimización para Hardware Legado.<br>Transformamos sistemas obsoletos en estaciones de trabajo eficientes.</p>
+    </section>
+
+    <div class="main-content">
+        <h2 class="section-title">Guías de Alto Rendimiento</h2>
+        <div class="guides-grid">
+            <!-- Guía 1 -->
+            <a href="/sovereign-content-engine/swap-zram.html" class="guide-card">
+                <img src="/sovereign-content-engine/assets/img/swap.jpg" alt="Swap y zRAM" class="card-image">
+                <div class="card-body">
+                    <h3>Rompiendo las Cadenas del Hardware: Optimización de Memoria con Swap y zRAM</h3>
+                    <p>Optimización avanzada de memoria para sistemas con poca RAM. Aprende a multiplicar tu eficiencia.</p>
+                    <span class="read-more">Acceder al Manual</span>
+                </div>
+            </a>
+
+            <!-- Guía 2 -->
+            <a href="/sovereign-content-engine/ssd.html" class="guide-card">
+                <img src="/sovereign-content-engine/assets/img/ssd.jpg" alt="SSD" class="card-image">
+                <div class="card-body">
+                    <h3>Resurrección de Hardware: El Salto al SSD contra la Obsolescencia</h3>
+                    <p>Cómo eliminar el cuello de botella más crítico de tu laptop y recuperar la velocidad original.</p>
+                    <span class="read-more">Acceder al Manual</span>
+                </div>
+            </a>
+
+            <!-- Guía 3 -->
+            <a href="/sovereign-content-engine/soberania.html" class="guide-card">
+                <img src="/sovereign-content-engine/assets/img/soberania.jpg" alt="Soberanía" class="card-image">
+                <div class="card-body">
+                    <h3>Soberanía Tecnológica: Evitando el Bloqueo de Hardware Programado</h3>
+                    <p>El camino hacia la propiedad real de tu hardware y la liberación del firmware.</p>
+                    <span class="read-more">Acceder al Manual</span>
+                </div>
+            </a>
+
+            <!-- Guía 4 -->
+            <a href="///sovereign-content-engine/mint.html" class="guide-card">
+                <img src="/sovereign-content-engine/assets/img/mint.jpg" alt="Linux Mint" class="card-image">
+                <div class="card-body">
+                    <h3>Manual de Resistencia: Optimización de Linux Mint para CPUs Antiguas</h3>
+                    <p>Transforma una CPU obsoleta en una estación ágil usando XFCE y ajustes de kernel.</p>
+                    <span class="read-more">Acceder al Manual</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Sovereign Content Engine | Especialistas en Soberanía Tecnológica</p>
+        <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.7rem;">Sistemas de Optimización de Bajo Nivel & Software Libre</p>
+    </footer>
+</body>
+</html>
