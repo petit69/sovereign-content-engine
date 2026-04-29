@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Content Engine | Soberanía Tecnológica</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #121212;
+            --accent-color: #00ffcc;
+            --text-main: #f5f5f5;
+            --text-dim: #a0a0a0;
+            --border-color: #222;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        nav {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-top: 3rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-top: 2rem;
+        }
+        p {
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+        .highlight-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        code {
+            background: #000;
+            color: #00ffcc;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #000;
+            color: #00ffcc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            text-align: left;
+        }
+        th {
+            background: var(--card-bg);
+            color: var(--accent-color);
+        }
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">← Volver al Inicio</a>
+        <div style="font-weight: 800; letter-spacing: 0.1em;">SOVEREIGN ENGINE</div>
+    </nav>
+    <div class="container">
+        <h1>Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado</h1>
+        <p><em>Manual de liberación de firmware y control total del silicio.</em></p>
+
+        <h2>✊ El Problema: la Obsolescencia Programada</h2>
+        <p>Nos han vendido la mentira de que la tecnología es un servicio alquilado. Mientras el <strong>firmware</strong> permanezca bajo llave y el <strong>bootloader</strong> esté bloqueado, solo somos inquilinos en nuestro propio silicio.</p>
+
+        <h2>🛠️ La Solución Técnica: Desacoplamiento y Firmware Libre</h2>
+        <p>La solución radica en la sustitución de los componentes de software propietarios por alternativas de <strong>Código Abierto</strong>.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Ecosistema Propietario (Cadenas)</th>
+                    <th>Ecosistema Soberano (Libertad)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Control de Arranque</td>
+                    <td>Bootloader bloqueado</td>
+                    <td>Bootloader abierto / Firmwares libres</td>
+                </tr>
+                <tr>
+                    <td>Ciclo de Vida</td>
+                    <td>Definido por fabricante (EOL)</td>
+                    <td>Definido por funcionalidad física</td>
+                </tr>
+                <tr>
+                    <td>Reparabilidad</td>
+                    <td>Piezas bloqueadas</td>
+                    <td>Componentes interoperables</td>
+                </tr>
+                <tr>
+                    <td>Privacidad</td>
+                    <td>Telemetría obligatoria</td>
+                    <td>Control total de datos</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🚀 Protocolo de Liberación</h2>
+        <div class="highlight-box">
+            <h3>Paso 1: Auditoría y Dumping</h3>
+            <p>Extraemos el estado actual del firmware utilizando un programador externo (como el <strong>CH341A</strong>) para evitar bloqueos de software.</p>
+
+            <h3>Paso 2: Extracción del Firmware Actual</h3>
+            <pre><code>sudo apt-get install flashrom
+sudo flashrom -p ch341a_spi -r backup_firmware.bin</code></pre>
+
+            <h3>Paso 3: Inyección de Firmware Libre</h3>
+            <pre><code>sudo flashrom -p ch341a_spi -w coreboot_liberado.bin</code></pre>
+
+            <h3>Paso 4: Desbloqueo de Periféricos y Kernel</h3>
+            <p>Deshabilitamos el <strong>Secure Boot</strong> y eliminamos los <strong>blobs</strong> propietarios para recuperar el control total.</p>
+        </div>
+
+        <h2>⚖️ Impacto en la Soberanía Tecnológica</h2>
+        <p>Llevamos el control al nivel del metal. Al controlar tu hardware, controlas quién accede a tu información y recuperas la capacidad de entender cómo funciona el mundo material que te rodea.</p>
+        <p><strong>La resistencia no se libra en las redes sociales, se libra en los circuitos, en las soldaduras y en el código fuente.</strong></p>
+    </div>
+    <div class="footer">
+        <p>© 2026 Sovereign Content Engine | Digital Resistance</p>
+    </div>
+</body>
+</html>
