@@ -73,14 +73,15 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 10vw, 7rem);
-            font-weight: 900;
-            letter-spacing: -0.05em;
-            line-height: 0.9;
-            margin: 0;
-            text-transform: uppercase;
-            color: var(--text-main);
-            z-index: 1;
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
         .hero p {
