@@ -1,0 +1,17 @@
+# Industrial & Technical Image Library
+# Use these as 'image' in Jekyll frontmatter
+
+## Hardware / Infrastructure
+- Servers/Data Center: /assets/img/default.jpg
+- Industrial Motherboard: /assets/img/default.jpg
+- Microchip/CPU: /assets/img/default.jpg
+- Networking/Cables: /assets/img/default.jpg
+
+## Cyber-Technical / Neon
+- Dark Tech Background: /assets/img/default.jpg
+- Code/Matrix Style: /assets/img/default.jpg
+- Blue Tech Circuits: /assets/img/default.jpg
+
+## Soberanía Tecnológica
+- Old Hardware/Repair: /assets/img/default.jpg
+- DIY Electronics: /assets/img/default.jpg
