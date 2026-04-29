@@ -28,6 +28,20 @@
             filter: contrast(1.1) brightness(0.9);
         }
 
+        .card-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-color);
+            filter: grayscale(0.5) brightness(0.8);
+            transition: all 0.4s ease;
+        }
+
+        .guide-card:hover .card-thumbnail {
+            filter: grayscale(0) brightness(1);
+            border-bottom-color: var(--accent-color);
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
@@ -214,6 +228,7 @@
         <div class="guides-grid">
             <!-- Guía 1 -->
             <a href="swap-zram.html" class="guide-card">
+                <img src="assets/img/ram-opt.png" class="card-thumbnail" alt="Memoria Thumbnail">
                 <div class="card-header">
                     <span class="card-index">01 // MEMORIA</span>
                 </div>
@@ -226,6 +241,7 @@
 
             <!-- Guía 2 -->
             <a href="ssd.html" class="guide-card">
+                <img src="assets/img/modular-upgrade.png" class="card-thumbnail" alt="Almacenamiento Thumbnail">
                 <div class="card-header">
                     <span class="card-index">02 // ALMACENAMIENTO</span>
                 </div>
@@ -238,6 +254,7 @@
 
             <!-- Guía 3 -->
             <a href="soberania.html" class="guide-card">
+                <img src="assets/img/sovereignty.png" class="card-thumbnail" alt="Firmware Thumbnail">
                 <div class="card-header">
                     <span class="card-index">03 // FIRMWARE</span>
                 </div>
@@ -250,6 +267,7 @@
 
             <!-- Guía 4 -->
             <a href="mint.html" class="guide-card">
+                <img src="assets/img/mint-opt.png" class="card-thumbnail" alt="Sistema Thumbnail">
                 <div class="card-header">
                     <span class="card-index">04 // SISTEMA</span>
                 </div>
