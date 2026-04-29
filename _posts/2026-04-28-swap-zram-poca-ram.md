@@ -52,7 +52,7 @@ Bold key terms, tables for comparisons.
 layout: default
 title: 'Configuración de swap y zram para sistemas con poca RAM'
 date: 2026-04-28
-image: '/assets/img/soberania.jpg
+image: '/assets/img/soberania.jpg'
 ---
 
 # Rompiendo las Cadenas del Hardware: Optimización de Memoria con Swap y zRAM

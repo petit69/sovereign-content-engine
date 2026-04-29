@@ -34,7 +34,7 @@ Bold key terms, tables for comparisons.
 layout: default
 title: 'Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado'
 date: 2026-04-28
-image: '/assets/img/soberania.jpg
+image: '/assets/img/soberania.jpg'
 ---
 
 # Soberanía tecnológica: Cómo evitar el bloqueo de hardware programado
